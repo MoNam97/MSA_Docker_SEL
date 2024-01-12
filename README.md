@@ -13,7 +13,7 @@
 
 در گام بعدی، Dockerfile های مربوط به backend و nginx را نوشتیم.
 
-و در انتها نیز docker-compose را تکمیل کردیم و اجزای مختلف سیستم را و ارتباطات و dependency ها را در آن قرار دادیم.
+و در انتها نیز docker-compose را تکمیل کردیم و اجزای مختلف سیستم را و ارتباطات و dependency ها را در آن قرار دادیم. سپس docker-compose را اجرا کردیم.
 
 ![image](https://github.com/MoNam97/MSA_Docker_SEL/blob/main/images/docker-compose1.PNG)
 
