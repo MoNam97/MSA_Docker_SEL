@@ -1,0 +1,59 @@
+version: "3.9"
+networks:
+   msa-docker-sel:
+     external: false
+
+services:
+  backend-server1:
+    build: ./backend
+    container_name: backend-server1
+    restart: always
+    networks:
+      - msa-docker-sel
+    environment:
+      - DB_URL=postgresql://postgres:postgres@flask_db:5432/postgres
+      - SERVER_ID=1
+    depends_on:
+      - flask_db
+
+  backend-server2:
+    build: ./backend
+    container_name: backend-server2
+    restart: always
+    networks:
+      - msa-docker-sel
+    environment:
+      - DB_URL=postgresql://postgres:postgres@flask_db:5432/postgres
+      - SERVER_ID=2
+    depends_on:
+      - flask_db
+        
+
+  backend-server3:
+    build: ./backend
+    container_name: backend-server3
+    restart: always
+    networks:
+      - msa-docker-sel
+    environment:
+      - DB_URL=postgresql://postgres:postgres@flask_db:5432/postgres
+      - SERVER_ID=3
+    depends_on:
+      - flask_db
+
+
+  flask_db:
+    image: postgres:latest
+    container_name: flask_db
+    restart: always
+    networks:
+      - msa-docker-sel
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata: {}
