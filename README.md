@@ -9,6 +9,10 @@
 
 روند پیاده سازی به این صورت بود که ابتدا یک سیستم backend را به صورت مینیمال پیاده سازی کردیم. سپس برای تست این قسمت backend یک نمونه دیتابیس را بالا آوردیم. 
 
+برای پیاده سازی backend از 
+[این راهنما](https://dev.to/francescoxx/build-a-crud-rest-api-in-python-using-flask-sqlalchemy-postgres-docker-28lo)
+ایده گرفته ایم.
+
 در قسمت بعدی برای تنظیمات load balancing از nginx استفاده کردیم و در کانفیگ مربوط به آن اطلاعات الگوریتم load balancing و backend هایی را که میخواهیم load balancing روی آنها انجام شود، وارد کردیم.
 
 در گام بعدی، Dockerfile های مربوط به backend و nginx را نوشتیم. به ترتیب در کامیت های [f5998c18045e8e73fd47e217c6ffaa6c3217c607](https://github.com/MoNam97/MSA_Docker_SEL/commit/f5998c18045e8e73fd47e217c6ffaa6c3217c607) و  [10681b3288aa1c366d2503e7f0c9d69eab35f340](https://github.com/MoNam97/MSA_Docker_SEL/commit/10681b3288aa1c366d2503e7f0c9d69eab35f340) تغییرات Dockerfile آورده شده است.
