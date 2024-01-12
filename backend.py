@@ -76,3 +76,19 @@ def update_book_record(id):
         return make_response(jsonify({'message': 'book record not found'}), 404)
     except:
         return make_response(jsonify({'message': 'error in updating book record'}), 500)
+
+# delete a book record
+@app.route('/books/<int:id>', methods=['DELETE'])
+def delete_book_record(id):
+    try:
+        book = Book.query.filter_by(id=id).first()
+        if book:
+            db.session.delete(book)
+            db.session.commit()
+            return make_response(jsonify({'message': 'book record deleted'}), 200)
+        return make_response(jsonify({'message': 'book record not found'}), 404)
+    except:
+        return make_response(jsonify({'message': 'error in deleting book record'}), 500)
+    
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=4000, debug=True)
