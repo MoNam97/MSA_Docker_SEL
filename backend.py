@@ -49,3 +49,16 @@ def get_books():
         return make_response(jsonify([book.json() for book in books]), 200)
     except:
         return make_response(jsonify({'message': 'error in getting book records'}), 500)
+
+
+# get a book record by id
+@app.route('/books/<int:id>', methods=['GET'])
+def get_book_record(id):
+    try:
+        book = Book.query.filter_by(id=id).first()
+        if book:
+            return make_response(jsonify(book.json()), 200)
+        return make_response(jsonify({'message': 'book record not found'}), 404)
+    except:
+        return make_response(jsonify({'message': 'error in getting book record'}), 500)
+    
