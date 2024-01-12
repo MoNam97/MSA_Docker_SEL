@@ -11,7 +11,8 @@
 
 در قسمت بعدی برای تنظیمات load balancing از nginx استفاده کردیم و در کانفیگ مربوط به آن اطلاعات الگوریتم load balancing و backend هایی را که میخواهیم load balancing روی آنها انجام شود، وارد کردیم.
 
-در گام بعدی، Dockerfile های مربوط به backend و nginx را نوشتیم.
+در گام بعدی، Dockerfile های مربوط به backend و nginx را نوشتیم. به ترتیب در کامیت های [f5998c18045e8e73fd47e217c6ffaa6c3217c607](https://github.com/MoNam97/MSA_Docker_SEL/commit/f5998c18045e8e73fd47e217c6ffaa6c3217c607) و  [10681b3288aa1c366d2503e7f0c9d69eab35f340](https://github.com/MoNam97/MSA_Docker_SEL/commit/10681b3288aa1c366d2503e7f0c9d69eab35f340) تغییرات Dockerfile آورده شده است.
+
 
 و در انتها نیز docker-compose را تکمیل کردیم و اجزای مختلف سیستم را و ارتباطات و dependency ها را در آن قرار دادیم. سپس docker-compose را اجرا کردیم.
 
@@ -45,11 +46,11 @@
 همانطور که در تصاویر مشخص است روند اجرای برنامه صحیح است.
 همچنین راجع به load-balancing، از یک url مخصوص استفاده کردیم /test و همانطور که در تصویرهای زیر مشخص است با هر دفعه reload پاسخی که دریافت می¬کنیم از یک backend متفاوت است و این به این معناست که load balancing به درستی انجام می شود.
 
-![image](https://github.com/MoNam97/MSA_Docker_SEL/blob/main/images/load-balanser1.PNG)
+![image](https://github.com/MoNam97/MSA_Docker_SEL/blob/main/images/load_balanser1.PNG)
 
-![image](https://github.com/MoNam97/MSA_Docker_SEL/blob/main/images/load-balanser2.PNG)
+![image](https://github.com/MoNam97/MSA_Docker_SEL/blob/main/images/load_balanser2.PNG)
 
-![image](https://github.com/MoNam97/MSA_Docker_SEL/blob/main/images/load-balanser3.PNG)
+![image](https://github.com/MoNam97/MSA_Docker_SEL/blob/main/images/load_balanser3.PNG)
 
 
 در رابطه با مورد 6، پاسخ به این صورت خواهد بود که باید مکانیزمی تعریف شود که طی آن فشار بر روی سرورها توزیع شود اما تمامی سرور ها از یک دیتابیس استفاده کنند. به این منظور مانند سیستم پیاده سازی شده در این آزمایش باید از یک load balancer استفاده کنیم تا درخواست ها را میان سرور ها تقسیم کند و هر سرور درخواست های دیتابیسی خود را به یک دیتابیس مشترک ارائه کند. مابقی اتفاقات از قبیل هندل کردن کانکرنسی connection های دیتابیس در خود دیتابیس ها در نظر گرفته خواهد شد.
