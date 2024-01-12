@@ -15,6 +15,10 @@
 
 و در انتها نیز docker-compose را تکمیل کردیم و اجزای مختلف سیستم را و ارتباطات و dependency ها را در آن قرار دادیم.
 
+![image](https://github.com/MoNam97/MSA_Docker_SEL/blob/main/images/docker-compose1.PNG)
+
+![image](https://github.com/MoNam97/MSA_Docker_SEL/blob/main/images/docker-compose2.PNG)
+
 تصویر مربوط  به وجود image ها و container های خواسته شده توسط گزارش در زیر آورده شده است:
 
 ![image](https://github.com/MoNam97/MSA_Docker_SEL/blob/main/images/command1.PNG)
@@ -34,13 +38,18 @@
   
 - یک کتاب را حذف کردیم و لیست تمامی کتاب ها را مشاهده کردیم.
 
- ![image](https://github.com/MoNam97/MSA_Docker_SEL/blob/main/images/test_delete.PNG)
+ ![image](https://github.com/MoNam97/MSA_Docker_SEL/blob/main/images/test_delete1.PNG)
 
  ![image](https://github.com/MoNam97/MSA_Docker_SEL/blob/main/images/test_delete2.PNG)
 
 همانطور که در تصاویر مشخص است روند اجرای برنامه صحیح است.
 همچنین راجع به load-balancing، از یک url مخصوص استفاده کردیم /test و همانطور که در تصویرهای زیر مشخص است با هر دفعه reload پاسخی که دریافت می¬کنیم از یک backend متفاوت است و این به این معناست که load balancing به درستی انجام می شود.
 
+![image](https://github.com/MoNam97/MSA_Docker_SEL/blob/main/images/load-balanser1.PNG)
+
+![image](https://github.com/MoNam97/MSA_Docker_SEL/blob/main/images/load-balanser2.PNG)
+
+![image](https://github.com/MoNam97/MSA_Docker_SEL/blob/main/images/load-balanser3.PNG)
 
 
 در رابطه با مورد 6، پاسخ به این صورت خواهد بود که باید مکانیزمی تعریف شود که طی آن فشار بر روی سرورها توزیع شود اما تمامی سرور ها از یک دیتابیس استفاده کنند. به این منظور مانند سیستم پیاده سازی شده در این آزمایش باید از یک load balancer استفاده کنیم تا درخواست ها را میان سرور ها تقسیم کند و هر سرور درخواست های دیتابیسی خود را به یک دیتابیس مشترک ارائه کند. مابقی اتفاقات از قبیل هندل کردن کانکرنسی connection های دیتابیس در خود دیتابیس ها در نظر گرفته خواهد شد.
