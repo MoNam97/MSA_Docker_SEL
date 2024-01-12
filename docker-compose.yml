@@ -4,6 +4,15 @@ networks:
      external: false
 
 services:
+  nginx:
+    build: ./nginx
+    container_name: load-balancer
+    restart: always
+    ports:
+      - 80:80
+    networks:
+      - msa-docker-sel
+      
   backend-server1:
     build: ./backend
     container_name: backend-server1
