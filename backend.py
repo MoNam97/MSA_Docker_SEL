@@ -26,3 +26,26 @@ with app.app_context():
 @app.route('/test', methods=['GET'])
 def test():
     return f"Hello from Book Service, server {severID}"
+
+
+# create a book recoed
+@app.route('/books', methods=['POST'])
+def create_book_recoed():
+    try:
+        data = request.get_json()
+        new_book = Book(title=data['title'], author=data['author'])
+        db.session.add(new_book)
+        db.session.commit()
+        return make_response(jsonify(new_book.json()), 201)
+    except Exception as e:
+        # return make_response(jsonify({'message': 'error in creating book recoed'}), 500)
+        return make_response(jsonify({'message': str(e)}), 500)
+
+# get all book recoeds
+@app.route('/books', methods=['GET'])
+def get_books():
+    try:
+        books = Book.query.all()
+        return make_response(jsonify([book.json() for book in books]), 200)
+    except:
+        return make_response(jsonify({'message': 'error in getting book records'}), 500)
