@@ -50,7 +50,6 @@ def get_books():
     except:
         return make_response(jsonify({'message': 'error in getting book records'}), 500)
 
-
 # get a book record by id
 @app.route('/books/<int:id>', methods=['GET'])
 def get_book_record(id):
@@ -61,7 +60,7 @@ def get_book_record(id):
         return make_response(jsonify({'message': 'book record not found'}), 404)
     except:
         return make_response(jsonify({'message': 'error in getting book record'}), 500)
-    
+
 # update a book record
 @app.route('/books/<int:id>', methods=['PUT'])
 def update_book_record(id):
