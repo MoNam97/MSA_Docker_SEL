@@ -17,16 +17,26 @@
 
 تصویر مربوط  به وجود image ها و container های خواسته شده توسط گزارش در زیر آورده شده است:
 
+![image]([files/Users/jzhang/Desktop/Isolated.png](https://github.com/MoNam97/MSA_Docker_SEL/blob/main/images/command1.PNG))
+
+![image]([files/Users/jzhang/Desktop/Isolated.png](https://github.com/MoNam97/MSA_Docker_SEL/blob/main/images/command2.PNG))
 
 همچنین تست هایی را نیز در رابطه با عملیات های متفاوت در سیستم انجام دادیم و تصاویر و توضیحات مربوط به آن ها در زیر آورده شده است.
 - ابتدا دو کتاب اضافه کردیم و لیست تمامی کتاب ها را Get کردیم.
-- 
-- 
+
+ ![image]([files/Users/jzhang/Desktop/Isolated.png](https://github.com/MoNam97/MSA_Docker_SEL/blob/main/images/test_create.PNG))
+
+ ![image]([files/Users/jzhang/Desktop/Isolated.png](https://github.com/MoNam97/MSA_Docker_SEL/blob/main/images/test_create2.PNG))
+ 
 - مقادیر مربوط به یک کتاب را تغییر دادیم و لیست تمامی کتابها را مشاهده کردیم.
-- 
-- 
+ 
+  ![image]([files/Users/jzhang/Desktop/Isolated.png](https://github.com/MoNam97/MSA_Docker_SEL/blob/main/images/test_update.PNG))
+  
 - یک کتاب را حذف کردیم و لیست تمامی کتاب ها را مشاهده کردیم.
-- 
+
+  ![image]([files/Users/jzhang/Desktop/Isolated.png](https://github.com/MoNam97/MSA_Docker_SEL/blob/main/images/test_delete.PNG))
+
+ ![image]([files/Users/jzhang/Desktop/Isolated.png](https://github.com/MoNam97/MSA_Docker_SEL/blob/main/images/test_delete2.PNG))
 
 همانطور که در تصاویر مشخص است روند اجرای برنامه صحیح است.
 همچنین راجع به load-balancing، از یک url مخصوص استفاده کردیم /test و همانطور که در تصویرهای زیر مشخص است با هر دفعه reload پاسخی که دریافت می¬کنیم از یک backend متفاوت است و این به این معناست که load balancing به درستی انجام می شود.
