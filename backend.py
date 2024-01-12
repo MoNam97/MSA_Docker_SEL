@@ -62,3 +62,17 @@ def get_book_record(id):
     except:
         return make_response(jsonify({'message': 'error in getting book record'}), 500)
     
+# update a book record
+@app.route('/books/<int:id>', methods=['PUT'])
+def update_book_record(id):
+    try:
+        book = Book.query.filter_by(id=id).first()
+        if book:
+            data = request.get_json()
+            book.title = data['title']
+            book.author = data['author']
+            db.session.commit()
+            return make_response(jsonify(book.json()), 200)
+        return make_response(jsonify({'message': 'book record not found'}), 404)
+    except:
+        return make_response(jsonify({'message': 'error in updating book record'}), 500)
